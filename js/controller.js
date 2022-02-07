@@ -1,7 +1,5 @@
 'use strict';
 
-// <button onclick="window.open('${proj.url}')">CLICK HERE TO OPEN THE PROJECT</button>
-
 function onInit() {
 	activateCreateProjs();
 	renderPortfolios();
@@ -30,6 +28,7 @@ function renderPortfolios() {
 }
 
 function onOpenModal(projectId) {
+	// <button onclick="window.open('${proj.url}')">CLICK HERE TO OPEN THE PROJECT</button>
 	const project = getProjById(projectId);
 	const $modal = $('.portfolio-modal');
 	$modal.modal('show');
@@ -40,3 +39,11 @@ function onOpenModal(projectId) {
 	$modal.find('.date').text(project.publishedAt);
 	$modal.find('.labels').text(project.labels.join(','));
 }
+
+$('form button').click(function() {
+	const email = $('form').find('#email').val();
+	const subject = $('form').find('#subject').val();
+	const body = $('form').find('#message-body').val();
+	window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&b ody=${body}`);
+	$('#target').click();
+});
