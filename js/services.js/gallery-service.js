@@ -12,27 +12,55 @@ function activateCreateProjs() {
 
 function _createProjs() {
 	gProjs = [
-		_createProj('ITS'),
-		_createProj('TOO'),
-		_createProj('LATE'),
-		_createProj('TO'),
-		_createProj('APOLOGIZE'),
-		_createProj('!!!')
+		{
+			id: 'tic-tac-toe',
+			name: 'Tic Tac Toe',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/tic-tac-toe/',
+			labels: []
+		},
+		{
+			id: 'minesweeper',
+			name: 'Mine Sweeper',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/MineSweeper/',
+			labels: []
+		},
+		{
+			id: 'book-shop',
+			name: 'Book Shop',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/book-shop/',
+			labels: []
+		},
+		{
+			id: 'safe-content',
+			name: 'Safe Content',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/safe-content/',
+			labels: []
+		},
+		{
+			id: 'proj-todo-mvc',
+			name: 'Todo',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/proj-todo-mvc/',
+			labels: []
+		},
+		{
+			id: 'ex-touch-nums',
+			name: 'Touch Nums',
+			title: makeLorem(8),
+			desc: makeLorem(8),
+			url: 'https://syntaxcat.github.io/ex-touch-nums/',
+			labels: []
+		}
 	];
-	console.log(gProjs);
-}
-
-function _createProj(name) {
-	const proj = {
-		id: name.toLowerCase(),
-		name,
-		title: makeLorem(8),
-		desc: makeLorem(8),
-		url: 'projURL',
-		publishedAt: 1448693940000,
-		labels: [ 'Matrixes', 'keyboard events' ]
-	};
-	return proj;
 }
 
 function getProjById(id) {

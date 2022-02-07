@@ -15,7 +15,7 @@ function renderPortfolios() {
                  <i class="fa fa-plus fa-3x"></i>
                </div>
              </div>
-             <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+             <img class="img-fluid" src="img/portfolio/${proj.id}.png" alt="">
            </a>
            <div class="portfolio-caption">
              <h4>${proj.name}</h4>
@@ -28,16 +28,16 @@ function renderPortfolios() {
 }
 
 function onOpenModal(projectId) {
-	// <button onclick="window.open('${proj.url}')">CLICK HERE TO OPEN THE PROJECT</button>
 	const project = getProjById(projectId);
 	const $modal = $('.portfolio-modal');
 	$modal.modal('show');
 	$modal.find('h2').text(project.name);
 	$modal.find('.item-intro').text(project.title);
-	$modal.find('.img-fluid').attr('src', `img/portfolio/${project.id}.jpg`);
+	$modal.find('.img-fluid').attr('src', `img/portfolio/${project.id}.png`);
 	$modal.find('.desc').text(project.desc);
 	$modal.find('.date').text(project.publishedAt);
 	$modal.find('.labels').text(project.labels.join(','));
+	$modal.find('.proj-link').attr('href', project.url);
 }
 
 $('form button').click(function() {
