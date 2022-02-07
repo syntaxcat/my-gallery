@@ -24,7 +24,7 @@ function _createProjs() {
 
 function _createProj(name) {
 	const proj = {
-		id: name,
+		id: name.toLowerCase(),
 		name,
 		title: makeLorem(8),
 		desc: makeLorem(8),
@@ -35,4 +35,6 @@ function _createProj(name) {
 	return proj;
 }
 
-// <button onclick="window.open('${proj.url}')">CLICK HERE TO OPEN THE PROJECT</button>
+function getProjById(id) {
+	return gProjs.find((p) => p.id === id);
+}
